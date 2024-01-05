@@ -1,0 +1,216 @@
+/* Fixing the issue of header and footer not covering the full page */
+
+
+header {
+  background-color: grey;
+  padding: 20px 15px 20px 10px;
+  border-style: solid;
+  border-width: 10px 0px;
+  border-color: black;
+  display: flex;
+  /* adjusting items on x-axis */
+  justify-content: space-between;
+  /* adjusting items on y-axis */
+  align-items: center;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 5px 5px 3px rgb(0, 0, 0);
+}
+
+h2 {
+  font-size: 40px;
+  color: white;
+  text-shadow: 5px 5px 3px rgb(0, 0, 0);
+}
+
+nav {
+  /* padding: 10px; */
+  border: 1px solid white;
+  box-shadow: 5px 5px 5px;
+}
+
+nav ul {
+  /* flexing only the ul */
+  display: flex;
+  font-size: 32px;
+}
+
+.line {
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+nav li {
+  padding: 16px;
+  border-radius: 2px;
+  background-color: black;
+}
+
+nav ul a {
+  color: white;
+  text-decoration: none;
+}
+
+.about-me {
+  background-color: black;
+  color: white;
+  padding: 100px 0px;
+}
+
+.about-me h2 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  /* Adding shadows to the text */
+  text-shadow: 5px 5px 3px rgb(0, 0, 0);
+  text-align: center;
+}
+
+.about-me p {
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  font-size: 20px;
+  /* Modifying boxes appearance */
+  box-shadow: 10px 10px 5px black;
+  background-color: black;
+}
+
+/* Targeting child of class: "about-me" the div using ">" */
+.about-me > div {
+  background-color: gray;
+  max-width: 600px;
+  margin:  auto;
+  padding: 50px;
+}
+
+.about-me img {
+  /* using position relative to move the picture */
+  position: relative;
+  left: 170px;
+  width: 264px;
+}
+
+/* Making everything pp-application contains a flexbox */
+.pp-application {
+
+  display: flex;
+}
+
+/* this is the left side bar property */
+.pp-application h2 {
+  /* The border right creates the divide line for on the webpage on the left */
+  border-right: 3px solid black;
+  padding: 20px;
+  background-color: grey;
+}
+
+/* this is the section that contains all the projects */
+/* the margin auto will center the contents */
+/* .projects-grid {
+  margin: auto;
+} */
+/* commenting it out for future usage*/
+
+/* this is the section that contains all the projects */
+.pp-application > div {
+  padding: 20px;
+  /* this adds background image to the section */
+  background-image: url("./images/Background.jpg");
+  /* this line will fill the section with the background image */
+  background-size: cover;
+  /* this line will stop the image from repeating if it's not big enough  */
+  background-repeat: no-repeat;
+  /* the margin auto will center the contents */
+  margin: auto;
+}
+
+/* this class gives attribute to each project box */
+.card {
+  border: 1px solid black;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 10px 10px 5px grey;
+  background-color: white;
+}
+
+/* this class adjust the image size */
+.card img {
+  width: 100%;
+}
+
+/* this class is use to adjust the a tag in card */
+.card a {
+  text-align: center;
+  text-decoration: none;
+  /* padding: 10px; */
+}
+
+/* this class adjust the first project independently because it needs to be display bigger */
+.big-card {
+  margin: 0 auto 20px auto;
+  width: 600px;
+}
+
+/* this section modifies the h3 which is the text which is the title of the project */
+.card h3 {
+  padding: 30px;
+  color: white;
+  background-color: rgb(19, 19, 20);;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* this section adjust the position of the projects other then the first project */
+.projects-row {
+  display: flex;
+  /* the gap feature separate the items by adding px in between the item*/
+  gap: 20px;
+  /* how to set basic border property */
+  /* border: 2px solid lime; */
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+/* this class is the contact info but also it's the footer of the website */
+.contact-info {
+  border-top: 3px solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 50px 15px 50px 10px;
+  background-color: grey;
+}
+
+.contact-info > ul {
+  border: 1px solid white;
+  color: white;
+  box-shadow: 5px 5px 5px black;
+  background-color: black;
+  padding: 10px;
+}
+
+.contact-info a:visited {
+  color: white;
+}
+
+/* this media section adjust the property so that the webpage have a organized look when view on different devices */
+/* it indicates take action when the screen size it at or below 768px */
+@media screen and (max-width: 768px) {
+  /* this is adjusting placement of the first project */
+  .big-card {
+    margin: 0 auto 20px auto;
+    width: 490px;
+  }
+
+  /* adjusting placement for rest of the projects */
+  .projects-row {
+    width: 80%;
+  }
+}
